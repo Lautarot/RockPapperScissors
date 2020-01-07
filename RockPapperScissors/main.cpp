@@ -1,23 +1,12 @@
 #include <SFML/Graphics.hpp>
+#include "game.h"
 using namespace std;
 using namespace sf;
 
 int main()
 {
-    RenderWindow window(VideoMode(800, 600), "Rock Papper & Scissors");
-
-    while (window.isOpen())
-    {
-        Event event;
-        while (window.pollEvent(event))
-        {
-            if (event.type == Event::Closed)
-                window.close();
-        }
-
-        window.clear();
-        window.display();
-    }
+    game* game1;
+    game1 = new game(Vector2i(800, 600), "Rock Papper & Scissors");
 
     return 0;
 }
